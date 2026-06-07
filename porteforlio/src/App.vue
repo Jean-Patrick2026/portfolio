@@ -5,6 +5,11 @@ import 'aos/dist/aos.css';
 import { onMounted } from 'vue';
 import HeroSection from './components/HeroSection.vue';
 import Education from './components/Education.vue';
+import Certificates from './components/Certificates.vue';
+import AboutSection from './components/AboutSection.vue';
+import Experience from './components/Experience.vue';
+import Projects from './components/Projects.vue';
+import Contact from './components/Contact.vue';
 
 onMounted(() => {
   AOS.init({
@@ -21,6 +26,11 @@ onMounted(() => {
     <Header />
     <HeroSection />
     <Education />
+    <Certificates />
+    <AboutSection />
+    <Experience />
+    <Projects />
+    <Contact />
 
   </div>
 </template>

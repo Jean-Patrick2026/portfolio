@@ -1,5 +1,5 @@
 <script setup>
-import { Calendar, GraduationCap } from 'lucide-vue-next';
+import { Calendar, CheckCircle2, GraduationCap } from 'lucide-vue-next';
 import educ from '../assets/educ.png';
 
 const educationData = [
@@ -29,7 +29,7 @@ const educationData = [
                 <h2 class="text-4xl md:text-5xl font-extrabold text-white">Education</h2>
             </div>
             <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="w-full lg:w-5/6 flex justify-center lg:justify-start data-aos=fade-right">
+                <div class="w-full lg:w-5/12 flex justify-center lg:justify-start data-aos=fade-right">
                     <div class="relative">
                         <div class="absolute h-full w-full z-0 p-2 translate-x-4 translate-y-4 rounded-2xl shadow-lg border border-primary"></div>
                         <div class="relative z-1 bg-[#111a2e] rounded-2xl overflow-hidden border-[#1f1641]">
@@ -42,7 +42,7 @@ const educationData = [
                     <div v-for="edu in educationData" :key="edu.id" class="group relative p-6 rounded-2xl bg-[#1f1641] transition-all duration-300 hover:border-primary/50">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
 
-                            <div class="flex items-center gap-3??">
+                            <div class="flex items-center gap-3">
 
                                 <div class="p-2 bg-[#050216] rounded-lg border border-primary/20 group-hover:border-primary transition-colors">
                                     <GraduationCap class="text-primary" :size="24" />
@@ -66,6 +66,10 @@ const educationData = [
                             {{ edu.details }}
                             <!-- 29:37 -->
                         </p>
+                        <div class="flex items-center gap-2 text-[10px] uppercase tracking-wider text-primary font-bold">
+                            <CheckCircle2 :size="12" />
+                            Academin Excellence
+                        </div>
                     </div>
                 </div>
             </div>
