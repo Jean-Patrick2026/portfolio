@@ -10,6 +10,7 @@ import AboutSection from './components/AboutSection.vue';
 import Experience from './components/Experience.vue';
 import Projects from './components/Projects.vue';
 import Contact from './components/Contact.vue';
+import Footer from './components/Footer.vue';
 
 onMounted(() => {
   AOS.init({
@@ -31,6 +32,7 @@ onMounted(() => {
     <Experience />
     <Projects />
     <Contact />
+    <Footer />
 
   </div>
 </template>

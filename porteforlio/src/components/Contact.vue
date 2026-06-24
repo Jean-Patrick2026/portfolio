@@ -68,7 +68,8 @@ const handleSubmit = async () => {
                 </h2>
                 <div class="w-28 h-1 bg-primary mx-auto mt-2 rounded-2xl"></div>
             </div>
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="flex ">
+            <div class="grid md:grid-cols-1 gap-8 ">
                 <div>
                     <p class="text-gray-400 mb-8 leading-relaxed">
                         Lorem ipsum dolor sit amet consectetur adipisicing
@@ -87,6 +88,12 @@ const handleSubmit = async () => {
                                 <h4 class="text-white font-medium text-sm">
                                     {{info.title}}
                                 </h4>
+                                <a v-if="info.link" :href="info.link" class="text-gray-400 text-sm hover:text-primary transitioncolors" :target="info.title === 'Location' ? '_self' : '_blank'" :ref="info.title === 'Location' ? '' : 'noopener noreferrer'">
+                                    {{  info.value }}
+                                </a>
+                                <p v-else class="text-gray-400 text-sm">
+                                    {{ info.value }}
+                                </p>
                                 <!-- 
                                 
                                 
@@ -100,11 +107,35 @@ const handleSubmit = async () => {
                                 
                                 -->
                                 <!-- 55:28 -->
-                                <a href=""></a>
+                          
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>              
+            </div>
+            <!-- form -->
+            <div class="bg-gray-800 rounded-lg p-6 w-[100%] ">
+                <form @submit.prevent="handleSubmit" >
+                    <!-- email -->
+                    <div class="mb-4">
+                        <label for="email" class="text-white block mb-2 text-sm font-medium">
+                            Email
+                        </label>
+                        <input type="email" id="email" v-model="formData.email" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white text-sm focus:outline-none focus:border-primary transition-colors" placeholder="your@email.com" required>
+                    </div>
+                    <!-- message -->
+                     <div class="mb-6">
+                        <label for="message" class="text-white block mb-2 text-sm font-medium">
+                            Message
+                        </label>
+                        <textarea  id="message" v-model="formData.message" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white text-sm focus:outline-none focus:border-primary transition-colors" placeholder="Tell me about your project ..." rows="4" required></textarea>
+                    </div>
+                    <button type="submit" :disabled="isSubmitting" class="w-full px-6 py-2.5 bg-primary text-white rounded-lg font-medium hover:bg-primary/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                        {{ isSubmitting ? 'sending...' : 'Send Message' }}
+                    </button>
+                </form>
+
+            </div>
             </div>
         </div>
     </section>
